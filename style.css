@@ -1,0 +1,30 @@
+/*Fonte do Site*/
+@font-face {
+    font-family: "Fonte padrão";
+    src: url("./fonts/Geo/Geo-Regular.woff2");
+    font-style: normal;
+}
+
+
+
+body {
+    background-color: rgb(34, 34, 34);
+    height: 100vh;
+    margin: 0;
+    font-family: "Fonte padrão";
+}
+
+
+#Home {
+    margin: 5%;
+    height: 500px;
+    padding-top: 100px;
+}
+
+#Home, h1 {
+    font-size: 80px;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+    
+}
