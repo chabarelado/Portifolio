@@ -5,26 +5,110 @@
     font-style: normal;
 }
 
+/*Paleta de cores*/
+:root {
+    --cor-primaria: #7030ef;
+    --cor-secundaria: #db1fff;
+    --cor-terciaria: #090820;
+    --cor-branca: white;
+}
 
-
+/*Configuração geral da página*/
 body {
-    background-color: rgb(34, 34, 34);
+    background: linear-gradient(45deg, var(--cor-primaria), var(--cor-secundaria));
     height: 100vh;
     margin: 0;
     font-family: "Fonte padrão";
 }
 
-
-#Home {
-    margin: 5%;
-    height: 500px;
-    padding-top: 100px;
+/*Cabeçalho*/
+header {
+    background-color: var(--cor-terciaria); /* Fundo escuro para o cabeçalho */
+    padding: 15px 0; /* Espaçamento interno superior e inferior */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para destaque */
+    position: fixed;
+    top: 0%;
+    width: 100%;
 }
 
-#Home, h1 {
+nav {
+    display: flex; /* Para alinhar o logo e a navegação lado a lado */
+    justify-content: space-between; /* Espaça o logo e os itens de navegação */
+    align-items: center; /* Alinha verticalmente os itens */
+    max-width: 1200px; /* Largura máxima da navegação */
+    margin: 0 auto; /* Centraliza a navegação na página */
+    padding: 0 20px; /* Espaçamento lateral */
+}
+
+.logo a {
+    color: var(--cor-branca); /* Cor do texto do logo */
+    font-size: 28px; /* Tamanho da fonte do logo */
+    font-weight: bold; /* Negrito para o logo */
+    text-decoration: none; /* Remove o sublinhado padrão do link */
+    transition: color 0.3s ease; /* Transição suave para a cor */
+}
+
+.logo a:hover {
+    color: var(--cor-primaria); /* Muda a cor ao passar o mouse */
+}
+
+nav ul {
+    list-style: none; /* Remove os marcadores de lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Para alinhar os itens da lista lado a lado */
+    gap: 30px; /* Espaçamento entre os itens da lista */
+}
+
+nav ul li a {
+    color: var(--cor-branca); /* Cor do texto dos links de navegação */
+    font-size: 22px; /* Tamanho da fonte dos links */
+    text-decoration: none; /* Remove o sublinhado padrão do link */
+    padding: 5px 0; /* Espaçamento interno para os links */
+    position: relative; /* Necessário para o efeito de sublinhado */
+    transition: color 0.3s ease; /* Transição suave para a cor */
+}
+
+nav ul li a::after {
+    content: ''; /* Conteúdo vazio para o pseudo-elemento */
+    position: absolute;
+    width: 0; /* Largura inicial zero */
+    height: 2px; /* Altura do sublinhado */
+    background-color: var(--cor-primaria); /* Cor do sublinhado */
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease; /* Transição suave para a largura */
+}
+
+nav ul li a:hover {
+    color: var(--cor-primaria); /* Muda a cor do texto ao passar o mouse */
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* Aumenta a largura do sublinhado ao passar o mouse */
+}
+
+/*Main(conteudo)*/
+main {
+    margin-top: 100px;
+}
+
+#Home {
+    width: 700px;
+    margin: 0 auto;
+    padding: 5%;
+}
+
+#Home h1 {
     font-size: 80px;
     font-weight: 300;
     text-align: center;
     color: white;
-    
+}
+
+#Home h2 {
+    font-size: 50px;
+    padding-top: 0;
+    text-align: center;
+    color: white;
 }
