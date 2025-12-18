@@ -2,7 +2,7 @@
    1. CONFIGURAÇÕES GLOBAIS
    ========================================================================== */
 
-/*Efeito de rolagem lenta da página*/
+/* Efeito de rolagem suave */
 html {
   scroll-behavior: smooth;
 }
@@ -33,72 +33,73 @@ body {
    2. CABEÇALHO (HEADER)
    ========================================================================== */
 header {
-    background-color: var(--cor-terciaria); 
-    padding: 18px 0; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+    background-color: var(--cor-terciaria);
+    padding: 18px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0%;
     width: 100%;
+    z-index: 1000; /* Garante que o header fique sobre outros elementos */
 }
 
 nav {
     display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    max-width: 1200px; 
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; 
+    padding: 0 20px;
 }
 
 .logo a {
-    color: var(--cor-branca); /* Cor do texto do logo */
-    font-size: 28px; /* Tamanho da fonte do logo */
-    font-weight: bold; /* Negrito para o logo */
-    text-decoration: none; /* Remove o sublinhado padrão do link */
-    transition: color 0.3s ease; /* Transição suave para a cor */
+    color: var(--cor-branca);
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .logo a:hover {
-    color: var(--cor-primaria); /* Muda a cor ao passar o mouse */
+    color: var(--cor-primaria);
 }
 
 nav ul {
-    list-style: none; /* Remove os marcadores de lista */
+    list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Para alinhar os itens da lista lado a lado */
-    gap: 30px; /* Espaçamento entre os itens da lista */
+    display: flex;
+    gap: 30px;
 }
 
 nav ul li a {
-    color: var(--cor-branca); /* Cor do texto dos links de navegação */
-    font-size: 22px; /* Tamanho da fonte dos links */
-    text-decoration: none; /* Remove o sublinhado padrão do link */
-    padding: 5px 0; /* Espaçamento interno para os links */
-    position: relative; /* Necessário para o efeito de sublinhado */
-    transition: color 0.3s ease; /* Transição suave para a cor */
+    color: var(--cor-branca);
+    font-size: 22px;
+    text-decoration: none;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
 nav ul li a::after {
-    content: ''; /* Conteúdo vazio para o pseudo-elemento */
+    content: '';
     position: absolute;
-    width: 0; /* Largura inicial zero */
-    height: 2px; /* Altura do sublinhado */
-    background-color: var(--cor-primaria); /* Cor do sublinhado */
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-primaria);
     left: 0;
     bottom: 0;
-    transition: width 0.3s ease; /* Transição suave para a largura */
+    transition: width 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: var(--cor-primaria); /* Muda a cor do texto ao passar o mouse */
+    color: var(--cor-primaria);
 }
 
 nav ul li a:hover::after {
-    width: 100%; /* Aumenta a largura do sublinhado ao passar o mouse */
+    width: 100%;
 }
 
-/* Esconde o menu hamburguer em telas maiores */
+/* Menu Hamburguer (escondido em telas maiores) */
 .menu-toggle,
 .menu-label {
     display: none;
@@ -108,8 +109,8 @@ nav ul li a:hover::after {
    3. CONTEÚDO PRINCIPAL (MAIN)
    ========================================================================== */
 main {
-    display: block; /* Define o elemento como um bloco (comportamento padrão para <main>) */
-    padding: 0; /* Remove qualquer espaçamento interno */
+    display: block;
+    padding: 0;
 }
 
 /* Seção: Home */
@@ -120,9 +121,9 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Alinha itens filhos (funciona melhor com display: flex) */
+    align-items: center;
     background: linear-gradient(45deg, var(--cor-primaria), var(--cor-secundaria));
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para destaque */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 #Home h1 {
@@ -133,148 +134,173 @@ main {
 }
 
 #Home h2 {
+    display: flex;  
     font-size: 50px;
     padding-top: 0;
     text-align: center;
     color: white;
 }
 
+/* Animação do cursor de digitação */
+.typing-cursor::after {
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: var(--cor-branca);
+    margin-left: 5px;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 /* Seção: Sobre */
 #Sobre {
-    display: flex; /* Ativa o layout flexbox para controle de alinhamento dos filhos */
-    width: 100%; /* Define a largura da seção para ocupar todo o espaço horizontal */
-    height: 750px; /* Define uma altura fixa para a seção */
-    margin: 0 auto; /* Centraliza a seção na página (se a largura for menor que 100%) */
-    background-color: var(--cor-branca); /* Define a cor de fundo usando uma variável */
-    justify-content: center; /* Centraliza o conteúdo filho horizontalmente */
-    align-items: center; /* Centraliza o conteúdo filho verticalmente */
+    display: flex;
+    width: 100%;
+    height: 750px;
+    margin: 0 auto;
+    background-color: var(--cor-branca);
+    justify-content: center;
+    align-items: center;
 }
 
 #Sobre p {
-    padding: 10px; /* Adiciona um espaçamento interno ao parágrafo */
-    font-size: 30px; /* Define o tamanho da fonte do texto */
-    text-align: center; /* Centraliza o texto do parágrafo */
-    color: var(--cor-terciaria); /* Define a cor do texto usando uma variável */
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+    color: var(--cor-terciaria);
 }
 
 /* Seção: Experiência */
 #Experiencia {
-    display: flex; /* Ativa o layout flexbox para os elementos filhos */
-    width: 100%; /* Faz a seção ocupar 100% da largura */
-    height: 750px; /* Define uma altura fixa para a seção */
-    background: linear-gradient(180deg, var(--cor-primaria), var(--cor-secundaria)); /* Aplica um fundo com gradiente vertical */
+    display: flex;
+    width: 100%;
+    height: 750px;
+    background: linear-gradient(180deg, var(--cor-primaria), var(--cor-secundaria));
 }
 
 /* Seção: Projetos */
 #Projetos {
-    width: 100%; /* Faz a seção ocupar 100% da largura */
-    height: 750px; /* Define uma altura fixa para a seção */
-    background-color: var(--cor-branca); /* Define a cor de fundo como branca */
+    width: 100%;
+    height: 750px;
+    background-color: var(--cor-branca);
  }
-
 
 /* ==========================================================================
    4. RODAPÉ (FOOTER)
    ========================================================================== */
 #Rodape {
-    width: 100%; /* Faz o rodapé ocupar 100% da largura */
-    background: var(--cor-terciaria); /* Define a cor de fundo escura */
-    height: 100px; /* Define uma altura fixa para o rodapé */
-    display: flex; /* Alinha os itens filhos */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    width: 100%;
+    background: var(--cor-terciaria);
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Estilos para a lista de redes sociais */
+/* Lista de redes sociais */
 .redes-sociais {
-    list-style: none; /* Remove os marcadores de lista */
+    list-style: none;
     padding: 0;
+    padding-bottom: 10px;
     margin: 0;
-    display: flex; /* Alinha os ícones lado a lado */
-    gap: 25px; /* Espaçamento entre os ícones */
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    border-bottom: var(--cor-secundaria) solid 2px;
+    width: 400px;
 }
 
 .redes-sociais li a {
     display: inline-block;
-    transition: transform 0.3s ease; /* Efeito suave de zoom */
+    transition: transform 0.3s ease;
 }
 
 .redes-sociais li a:hover {
-    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+    transform: scale(1.2);
 }
 
 .redes-sociais svg {
-    fill: var(--cor-branca); /* Cor padrão dos ícones */
+    fill: var(--cor-branca);
 }
 
 /* ==========================================================================
    5. MEDIA QUERIES (RESPONSIVIDADE)
    ========================================================================== */
-
 @media (max-width: 768px) {
     nav {
         width: 80%;
         margin: 0;
     }
 
-    /* Esconde a navegação padrão e mostra o botão hamburguer */
     nav ul {
-        display: none;
+        /* Esconde a navegação padrão e prepara para o menu hamburguer */
+        display: flex;
         position: absolute;
-        top: 100%; /* Posiciona o menu logo abaixo do header */
+        top: 100%;
         left: 0;
         width: 100%;
         background-color: var(--cor-terciaria);
         flex-direction: column;
         align-items: center;
-        padding: 20px 0;
+        padding: 0 0;
         gap: 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out, padding 0.4s ease-out;
     }
 
     nav ul li a {
         font-size: 20px;
     }
 
-    /* Estilos para o botão hamburguer */
+    /* Estilos para o label do menu hamburguer */
     .menu-label {
         display: flex;
         align-items: center;
         cursor: pointer;
         padding: 5px;
     }
-    
-    /* Estilos para os ícones SVG */
+
     .menu-label svg {
         color: var(--cor-branca);
     }
 
+    /* Esconde o ícone de fechar por padrão */
     .icon-close {
-        display: none; /* Esconde o ícone de fechar por padrão */
+        display: none;
     }
 
     /* Mostra o menu quando o checkbox está marcado */
     .menu-toggle:checked + .menu-label + ul {
-        display: flex;
+        max-height: 300px;
+        padding: 20px 0;
+        transition: max-height 0.4s ease-in, padding 0.4s ease-in;
     }
-    
-    /* Lógica para trocar os ícones ao clicar */
+
+    /* Troca os ícones ao clicar */
     .menu-toggle:checked + .menu-label .icon-hamburger {
-        display: none; /* Esconde o ícone de hambúrguer quando o menu está aberto */
+        display: none;
     }
 
     .menu-toggle:checked + .menu-label .icon-close {
-        display: block; /* Mostra o ícone de fechar quando o menu está aberto */
+        display: block;
     }
 
-    /* Ajustes gerais para seções */
+    /* Ajustes gerais para seções em telas menores */
     #Home, #Sobre, #Experiencia, #Projetos {
-        height: auto; /* Altura automática para se ajustar ao conteúdo */
-        padding-top: 120px; /* Adiciona espaço para o header fixo */
+        height: auto;
+        padding-top: 120px;
         padding-bottom: 40px;
         padding-left: 20px;
         padding-right: 20px;
     }
 
+    /* Ajustes de fonte para telas menores */
     #Home h1 { font-size: 40px; }
     #Home h2 { font-size: 25px; }
     #Sobre p { font-size: 20px; }
