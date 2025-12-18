@@ -1,11 +1,20 @@
-/*Fonte do Site*/
+/* ==========================================================================
+   1. CONFIGURAÇÕES GLOBAIS
+   ========================================================================== */
+
+/*Efeito de rolagem lenta da página*/
+html {
+  scroll-behavior: smooth;
+}
+
+/* Importação da Fonte */
 @font-face {
     font-family: "Fonte padrão";
     src: url("./fonts/Geo/Geo-Regular.woff2");
     font-style: normal;
 }
 
-/*Paleta de cores*/
+/* Variáveis de Cor (Paleta) */
 :root {
     --cor-primaria: #7030ef;
     --cor-secundaria: #db1fff;
@@ -13,31 +22,32 @@
     --cor-branca: white;
 }
 
-/*Configuração geral da página*/
+/* Estilos Base do Corpo da Página */
 body {
-    background: linear-gradient(45deg, var(--cor-primaria), var(--cor-secundaria));
-    height: 100vh;
+    padding: 0;
     margin: 0;
     font-family: "Fonte padrão";
 }
 
-/*Cabeçalho*/
+/* ==========================================================================
+   2. CABEÇALHO (HEADER)
+   ========================================================================== */
 header {
-    background-color: var(--cor-terciaria); /* Fundo escuro para o cabeçalho */
-    padding: 15px 0; /* Espaçamento interno superior e inferior */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para destaque */
+    background-color: var(--cor-terciaria); 
+    padding: 18px 0; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
     position: fixed;
     top: 0%;
     width: 100%;
 }
 
 nav {
-    display: flex; /* Para alinhar o logo e a navegação lado a lado */
-    justify-content: space-between; /* Espaça o logo e os itens de navegação */
-    align-items: center; /* Alinha verticalmente os itens */
-    max-width: 1200px; /* Largura máxima da navegação */
-    margin: 0 auto; /* Centraliza a navegação na página */
-    padding: 0 20px; /* Espaçamento lateral */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px; 
 }
 
 .logo a {
@@ -88,15 +98,31 @@ nav ul li a:hover::after {
     width: 100%; /* Aumenta a largura do sublinhado ao passar o mouse */
 }
 
-/*Main(conteudo)*/
-main {
-    margin-top: 100px;
+/* Esconde o menu hamburguer em telas maiores */
+.menu-toggle,
+.menu-label {
+    display: none;
 }
 
+/* ==========================================================================
+   3. CONTEÚDO PRINCIPAL (MAIN)
+   ========================================================================== */
+main {
+    display: block; /* Define o elemento como um bloco (comportamento padrão para <main>) */
+    padding: 0; /* Remove qualquer espaçamento interno */
+}
+
+/* Seção: Home */
 #Home {
-    width: 700px;
+    height: 680px;
     margin: 0 auto;
     padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Alinha itens filhos (funciona melhor com display: flex) */
+    background: linear-gradient(45deg, var(--cor-primaria), var(--cor-secundaria));
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para destaque */
 }
 
 #Home h1 {
@@ -111,4 +137,145 @@ main {
     padding-top: 0;
     text-align: center;
     color: white;
+}
+
+/* Seção: Sobre */
+#Sobre {
+    display: flex; /* Ativa o layout flexbox para controle de alinhamento dos filhos */
+    width: 100%; /* Define a largura da seção para ocupar todo o espaço horizontal */
+    height: 750px; /* Define uma altura fixa para a seção */
+    margin: 0 auto; /* Centraliza a seção na página (se a largura for menor que 100%) */
+    background-color: var(--cor-branca); /* Define a cor de fundo usando uma variável */
+    justify-content: center; /* Centraliza o conteúdo filho horizontalmente */
+    align-items: center; /* Centraliza o conteúdo filho verticalmente */
+}
+
+#Sobre p {
+    padding: 10px; /* Adiciona um espaçamento interno ao parágrafo */
+    font-size: 30px; /* Define o tamanho da fonte do texto */
+    text-align: center; /* Centraliza o texto do parágrafo */
+    color: var(--cor-terciaria); /* Define a cor do texto usando uma variável */
+}
+
+/* Seção: Experiência */
+#Experiencia {
+    display: flex; /* Ativa o layout flexbox para os elementos filhos */
+    width: 100%; /* Faz a seção ocupar 100% da largura */
+    height: 750px; /* Define uma altura fixa para a seção */
+    background: linear-gradient(180deg, var(--cor-primaria), var(--cor-secundaria)); /* Aplica um fundo com gradiente vertical */
+}
+
+/* Seção: Projetos */
+#Projetos {
+    width: 100%; /* Faz a seção ocupar 100% da largura */
+    height: 750px; /* Define uma altura fixa para a seção */
+    background-color: var(--cor-branca); /* Define a cor de fundo como branca */
+ }
+
+
+/* ==========================================================================
+   4. RODAPÉ (FOOTER)
+   ========================================================================== */
+#Rodape {
+    width: 100%; /* Faz o rodapé ocupar 100% da largura */
+    background: var(--cor-terciaria); /* Define a cor de fundo escura */
+    height: 100px; /* Define uma altura fixa para o rodapé */
+    display: flex; /* Alinha os itens filhos */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+/* Estilos para a lista de redes sociais */
+.redes-sociais {
+    list-style: none; /* Remove os marcadores de lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Alinha os ícones lado a lado */
+    gap: 25px; /* Espaçamento entre os ícones */
+}
+
+.redes-sociais li a {
+    display: inline-block;
+    transition: transform 0.3s ease; /* Efeito suave de zoom */
+}
+
+.redes-sociais li a:hover {
+    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+}
+
+.redes-sociais svg {
+    fill: var(--cor-branca); /* Cor padrão dos ícones */
+}
+
+/* ==========================================================================
+   5. MEDIA QUERIES (RESPONSIVIDADE)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    nav {
+        width: 80%;
+        margin: 0;
+    }
+
+    /* Esconde a navegação padrão e mostra o botão hamburguer */
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%; /* Posiciona o menu logo abaixo do header */
+        left: 0;
+        width: 100%;
+        background-color: var(--cor-terciaria);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    /* Estilos para o botão hamburguer */
+    .menu-label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 5px;
+    }
+    
+    /* Estilos para os ícones SVG */
+    .menu-label svg {
+        color: var(--cor-branca);
+    }
+
+    .icon-close {
+        display: none; /* Esconde o ícone de fechar por padrão */
+    }
+
+    /* Mostra o menu quando o checkbox está marcado */
+    .menu-toggle:checked + .menu-label + ul {
+        display: flex;
+    }
+    
+    /* Lógica para trocar os ícones ao clicar */
+    .menu-toggle:checked + .menu-label .icon-hamburger {
+        display: none; /* Esconde o ícone de hambúrguer quando o menu está aberto */
+    }
+
+    .menu-toggle:checked + .menu-label .icon-close {
+        display: block; /* Mostra o ícone de fechar quando o menu está aberto */
+    }
+
+    /* Ajustes gerais para seções */
+    #Home, #Sobre, #Experiencia, #Projetos {
+        height: auto; /* Altura automática para se ajustar ao conteúdo */
+        padding-top: 120px; /* Adiciona espaço para o header fixo */
+        padding-bottom: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #Home h1 { font-size: 40px; }
+    #Home h2 { font-size: 25px; }
+    #Sobre p { font-size: 20px; }
 }
