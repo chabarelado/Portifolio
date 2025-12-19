@@ -310,6 +310,10 @@ main {
         display: block;
     }
 
+    main {
+        width: 100%;
+    }
+
     /* Ajustes gerais para seções em telas menores */
     #Home, #Sobre, #Experiencia, #Projetos #Rodape {
         width: 100%;
