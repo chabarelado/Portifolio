@@ -39,7 +39,7 @@ header {
     position: fixed;
     top: 0%;
     width: 100%;
-    z-index: 1000; /* Garante que o header fique sobre outros elementos */
+    z-index: 1000; 
 }
 
 nav {
@@ -161,7 +161,8 @@ main {
 #Sobre {
     display: flex;
     width: 100%;
-    height: 750px;
+    padding: 50px 0;
+    height: auto;
     margin: 0 auto;
     background-color: var(--cor-branca);
     justify-content: center;
@@ -172,7 +173,25 @@ main {
     padding: 10px;
     font-size: 30px;
     text-align: center;
-    color: var(--cor-terciaria);
+    color: var(--cor-branca);
+}
+
+#sobre-text {
+    background: linear-gradient(100deg, var(--cor-secundaria), var(--cor-primaria));
+    width: 70%;
+    text-align: center;
+    border-radius: 15px;
+    padding: 20px;
+
+}
+
+.container-foto img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--cor-branca);
+    margin-bottom: 15px;
 }
 
 /* Seção: Experiência */
@@ -292,11 +311,9 @@ main {
     }
 
     /* Ajustes gerais para seções em telas menores */
-    #Home, #Sobre, #Experiencia, #Projetos {
-        height: auto;
-        padding-top: 120px;
+    #Home, #Sobre, #Experiencia, #Projetos #Rodape {
+        width: 100%;
         padding-bottom: 40px;
-        padding-left: 20px;
         padding-right: 20px;
     }
 
@@ -304,4 +321,20 @@ main {
     #Home h1 { font-size: 40px; }
     #Home h2 { font-size: 25px; }
     #Sobre p { font-size: 20px; }
+
+    #Home {
+        height: 500px;
+    }
+    
+    #Sobre {
+        height: auto;
+    }
+
+    #sobre-text {
+        width: 85%;
+    }
+
+    .redes-sociais {
+        width: 55%;
+        gap: 15px;}
 }
