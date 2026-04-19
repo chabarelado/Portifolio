@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="./imgs/icon.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Portifólio | José Augusto</title>
 </head>
 <body>
@@ -13,12 +16,7 @@
             <div class="logo">
                 <a href="#Home">José Augusto</a>
             </div>
-            <input class="menu-toggle" type="checkbox" id="menu-toggle"/>
-            <label class="menu-label" for="menu-toggle">
-                <svg class="icon-hamburger" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,88H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg>
-                <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>
-            </label>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="#Home">Home</a></li>
                 <li><a href="#Sobre">Sobre</a></li>
                 <li><a href="#Experiencia">Experiência</a></li>
@@ -28,51 +26,10 @@
         </nav>
     </header>
     <main>
-        <div id="Home"> 
-            <h1>José Augusto da Silva Machado</h1>
-            <h2>Técnico e Desenvolvedor</h2>
-        </div>
-        <div id="Sobre">
-            <div id="sobre-text">
-                <div class="container-foto">
-                    <img src="./imgs/icon.png" alt="Foto de Perfil">
-                </div>
-                <p>Me chamo José Augusto, profissional de TI com formação técnica em Informática e atualmente cursando 
-                    Análise e Desenvolvimento de Sistemas. Atuo na área de tecnologia com foco em infraestrutura, 
-                    suporte técnico e desenvolvimento, unindo conhecimento prático e aprendizado contínuo.
-                </p>
-                <p>Possuo experiência sólida em manutenção de computadores e notebooks, suporte a usuários, 
-                    atendimento técnico e operação de redes, incluindo atuação em ambientes corporativos e no suporte 
-                    à rede de creches do município de Juiz de Fora. Ao longo da minha trajetória, trabalhei tanto em 
-                    empresas de tecnologia quanto em atendimentos autônomos, o que me proporcionou uma visão ampla 
-                    as necessidades do usuário final e das rotinas de TI.
-                </p>
-                <p>
-                    Além disso, tenho habilidades em desenvolvimento web, com conhecimentos em HTML, CSS, JavaScript 
-                    e frameworks como Bootstrap. Estou sempre buscando aprimorar minhas competências técnicas e 
-                    explorar novas tecnologias para oferecer soluções eficazes e inovadoras.
-                </p>
-            </div>
 
-        </div>
-        <div id="Experiencia">
-            <section>   
-                <article></article>
-                <article></article>
-                <article></article>
-                <article></article>
-            </section>
-        </div>
-        <div id="Projetos">
-            <section>
-                <article></article>
-                <article></article>
-                <article></article>
-                <article></article>
-            </section>
-        </div>
-    </main> 
+    </main>    
     <footer id="Rodape">
+        <h2>Contato:</h2>
         <ul class="redes-sociais">
             <li>
                 <a href="https://github.com/chabarelado" target="_blank" aria-label="Link para o Github">  
@@ -97,6 +54,7 @@
                 </a>
             </li>
          </ul>
+         <p>&copy; 2026 José Augusto da Silva Machado. Todos os direitos reservados.</p>
     </footer>
     <script src="script.js"></script>
 </body>

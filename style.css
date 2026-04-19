@@ -1,38 +1,25 @@
-/* ==========================================================================
-   1. CONFIGURAÇÕES GLOBAIS
-   ========================================================================== */
 
-/* Efeito de rolagem suave */
+
 html {
   scroll-behavior: smooth;
 }
 
-/* Importação da Fonte */
-@font-face {
-    font-family: "Fonte padrão";
-    src: url("./fonts/Geo/Geo-Regular.woff2");
-    font-style: normal;
-}
-
-/* Variáveis de Cor (Paleta) */
 :root {
-    --cor-primaria: #7030ef;
-    --cor-secundaria: #db1fff;
+    --cor-primaria: #9006f3;
+    --cor-secundaria: #bd36d5;
     --cor-terciaria: #090820;
     --cor-branca: white;
 }
 
-/* Estilos Base do Corpo da Página */
 body {
     padding: 0;
     margin: 0;
-    font-family: "Fonte padrão";
+    font-family: "Playfair Display";
+    background: linear-gradient(90deg, );
 }
 
-/* ==========================================================================
-   2. CABEÇALHO (HEADER)
-   ========================================================================== */
 header {
+    backdrop-filter: blur(10px);
     background-color: var(--cor-terciaria);
     padding: 18px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -42,28 +29,16 @@ header {
     z-index: 1000; 
 }
 
-nav {
+header nav {
     display: flex; 
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 10px;
 }
 
-.logo a {
-    color: var(--cor-branca);
-    font-size: 28px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.logo a:hover {
-    color: var(--cor-primaria);
-}
-
-nav ul {
+header nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -71,7 +46,7 @@ nav ul {
     gap: 30px;
 }
 
-nav ul li a {
+header nav ul li a {
     color: var(--cor-branca);
     font-size: 22px;
     text-decoration: none;
@@ -80,156 +55,68 @@ nav ul li a {
     transition: color 0.3s ease;
 }
 
-nav ul li a::after {
+header nav ul li a::after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
-    background-color: var(--cor-primaria);
+    background-color: var(--cor-secundaria);
     left: 0;
     bottom: 0;
     transition: width 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: var(--cor-primaria);
+header nav ul li a:hover {
+    color: var(--cor-secundaria);
 }
 
-nav ul li a:hover::after {
+header nav ul li a:hover::after {
     width: 100%;
 }
 
-/* Menu Hamburguer (escondido em telas maiores) */
-.menu-toggle,
-.menu-label {
-    display: none;
+.logo a {
+    color: var(--cor-branca);
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-/* ==========================================================================
-   3. CONTEÚDO PRINCIPAL (MAIN)
-   ========================================================================== */
+.logo a:hover {
+    color: var(--cor-secundaria);
+}
+
+
 main {
     display: block;
     padding: 0;
+    height: 500px;
 }
 
-/* Seção: Home */
-#Home {
-    height: 680px;
-    margin: 0 auto;
-    padding: 5%;
+
+#Rodape {
+    width: 100%;
+    background: var(--cor-terciaria);
+    height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg, var(--cor-primaria), var(--cor-secundaria));
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-#Home h1 {
-    font-size: 80px;
-    font-weight: 300;
-    text-align: center;
-    color: white;
-}
-
-#Home h2 {
-    display: flex;  
-    font-size: 50px;
-    padding-top: 0;
-    text-align: center;
-    color: white;
-}
-
-/* Animação do cursor de digitação */
-.typing-cursor::after {
-    content: '';
-    display: inline-block;
-    width: 2px;
-    height: 1em;
-    background-color: var(--cor-branca);
-    margin-left: 5px;
-    animation: blink-caret 0.75s step-end infinite;
-}
-
-@keyframes blink-caret {
-    from, to { opacity: 1; }
-    50% { opacity: 0; }
-}
-
-/* Seção: Sobre */
-#Sobre {
-    display: flex;
-    width: 100%;
-    padding: 50px 0;
-    height: auto;
-    margin: 0 auto;
-    background-color: var(--cor-branca);
-    justify-content: center;
-    align-items: center;
-}
-
-#Sobre p {
-    padding: 10px;
-    font-size: 30px;
-    text-align: center;
+#Rodape h2{ 
     color: var(--cor-branca);
+    font-size: 45px;
 }
 
-#sobre-text {
-    background: linear-gradient(100deg, var(--cor-secundaria), var(--cor-primaria));
-    width: 70%;
-    text-align: center;
-    border-radius: 15px;
-    padding: 20px;
-
-}
-
-.container-foto img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--cor-branca);
-    margin-bottom: 15px;
-}
-
-/* Seção: Experiência */
-#Experiencia {
-    display: flex;
-    width: 100%;
-    height: 750px;
-    background: linear-gradient(180deg, var(--cor-primaria), var(--cor-secundaria));
-}
-
-/* Seção: Projetos */
-#Projetos {
-    width: 100%;
-    height: 750px;
-    background-color: var(--cor-branca);
- }
-
-/* ==========================================================================
-   4. RODAPÉ (FOOTER)
-   ========================================================================== */
-#Rodape {
-    width: 100%;
-    background: var(--cor-terciaria);
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Lista de redes sociais */
 .redes-sociais {
     list-style: none;
     padding: 0;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 40px;
     border-bottom: var(--cor-secundaria) solid 2px;
     width: 400px;
 }
@@ -247,98 +134,10 @@ main {
     fill: var(--cor-branca);
 }
 
-/* ==========================================================================
-   5. MEDIA QUERIES (RESPONSIVIDADE)
-   ========================================================================== */
-@media (max-width: 768px) {
-    nav {
-        width: 80%;
-        margin: 0;
-    }
-
-    nav ul {
-        /* Esconde a navegação padrão e prepara para o menu hamburguer */
-        display: flex;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--cor-terciaria);
-        flex-direction: column;
-        align-items: center;
-        padding: 0 0;
-        gap: 20px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-    }
-
-    nav ul li a {
-        font-size: 20px;
-    }
-
-    /* Estilos para o label do menu hamburguer */
-    .menu-label {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        padding: 5px;
-    }
-
-    .menu-label svg {
-        color: var(--cor-branca);
-    }
-
-    /* Esconde o ícone de fechar por padrão */
-    .icon-close {
-        display: none;
-    }
-
-    /* Mostra o menu quando o checkbox está marcado */
-    .menu-toggle:checked + .menu-label + ul {
-        max-height: 300px;
-        padding: 20px 0;
-        transition: max-height 0.4s ease-in, padding 0.4s ease-in;
-    }
-
-    /* Troca os ícones ao clicar */
-    .menu-toggle:checked + .menu-label .icon-hamburger {
-        display: none;
-    }
-
-    .menu-toggle:checked + .menu-label .icon-close {
-        display: block;
-    }
-
-    main {
-        width: 100%;
-    }
-
-    /* Ajustes gerais para seções em telas menores */
-    #Home, #Sobre, #Experiencia, #Projetos #Rodape {
-        width: 100%;
-        padding-bottom: 40px;
-        padding-right: 20px;
-    }
-
-    /* Ajustes de fonte para telas menores */
-    #Home h1 { font-size: 40px; }
-    #Home h2 { font-size: 25px; }
-    #Sobre p { font-size: 20px; }
-
-    #Home {
-        height: 500px;
-    }
-    
-    #Sobre {
-        height: auto;
-    }
-
-    #sobre-text {
-        width: 85%;
-    }
-
-    .redes-sociais {
-        width: 55%;
-        gap: 15px;}
+#Rodape, p{
+    padding-top: 20px;
+    color: white;
+    text-align: center;
+    font-size: 15px;
 }
+ 
