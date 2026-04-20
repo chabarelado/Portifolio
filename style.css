@@ -2,6 +2,9 @@ html, body {
     overflow-x: hidden;
     width: 100%;
     position: relative;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
@@ -531,6 +534,7 @@ main {
 
     .timeline {
         margin: 50px auto;
+        
     }
 
     .timeline::after {
@@ -538,7 +542,7 @@ main {
     }
 
     .container-timeline {
-        width: 80%;
+        width: 90%;
         padding-left: 70px;
         text-align: left;
     }
