@@ -209,7 +209,6 @@ main {
     border-radius: 50%;
     animation: ring 2s linear infinite;
     position: absolute;
-    background-color: aliceblue;
     width: 300px;
     height: 300px
 }
