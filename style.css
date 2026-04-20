@@ -562,7 +562,7 @@ main {
 
 
     .container-projetos {
-        width: 90%;
+        width: 100%;
         height: auto;
         min-height: 400px;
     }
@@ -574,7 +574,7 @@ main {
     }
 
     #Rodape {
-        height: 700px;;
+        height: 300px;;
     }
 
     #Rodape h2 {
