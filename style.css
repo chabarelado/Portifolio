@@ -71,11 +71,15 @@ header {
     background-color: var(--cor-terciaria);
     position: fixed;
     left: 0;
+    right: 0;
     top: 0;
-    width: 100%;
+    width: auto;
     z-index: 1000; 
     box-sizing: border-box;
     display: block;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     will-change: transform;
 }
 
@@ -610,6 +614,7 @@ main {
 #Rodape h2{ 
     color: var(--cor-branca);
     font-size: 45px;
+    margin-bottom: 50px;
 }
 
 .redes-sociais {
@@ -656,7 +661,7 @@ main {
 
     header nav {
         flex-direction: column; 
-        justify-content: space-around;
+        justify-content: center;
         padding: 20px;
     }
 
@@ -666,8 +671,8 @@ main {
     }
 
     header nav ul li a {
-        font-size: 14px; 
-        padding: 20px;
+        font-size: 16px; 
+        padding: 10px 15px;
     }
     
     #Home {
