@@ -667,8 +667,7 @@ main {
 @media screen and (max-width: 768px) {
 
    header {
-        width: 90%;
-        margin: auto;
+        width: 100%;
     }
 
     header nav {
@@ -799,7 +798,10 @@ main {
         font-size: 24px;
     }
     
-    #conteudo-apresentacao img {
+    #conteudo-apresentacao img,
+    .center,
+    .ring {
         width: 150px;
+        height: 150px;
     }
 }
