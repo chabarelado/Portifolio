@@ -66,7 +66,7 @@ header {
     width: 100%;
     z-index: 1000; 
     box-sizing: border-box;
-    transform: translateZ(0); /* Força renderização pela GPU para evitar tremores */
+    display: block;
 }
 
 header nav {
@@ -460,10 +460,8 @@ main {
 }
 
 @media screen and (max-width: 768px) {
-    
 
     header {
-        top: 0;
         padding: 10px 0;
     }
 
@@ -533,7 +531,7 @@ main {
     }
 
     .container-timeline {
-        width: 90%;
+        width: 80%;
         padding-left: 70px;
         padding-right: 25px;
         text-align: left;
