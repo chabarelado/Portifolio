@@ -22,7 +22,7 @@ O site destaca minha transição e união entre o suporte de hardware/infraestru
 - **Experiência**: Linha do tempo detalhando passagens pela Cercred, Datafor Informática e AMAC.
 - **Contatos**: Links diretos para minhas redes sociais e GitHub.
 
-## �👨‍💻 Sobre Mim
+## 👨‍💻 Sobre Mim
 
 Sou Técnico em Informática e graduando em Análise e Desenvolvimento de Sistemas na Estácio. Atualmente, trabalho na AMAC, fornecendo suporte técnico à rede de creches municipais de Juiz de Fora. Tenho foco em resolver problemas reais através da tecnologia, seja no hardware ou no código.
 

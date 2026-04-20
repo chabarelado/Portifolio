@@ -26,11 +26,10 @@ body {
     padding: 0;
     margin: 0;
     font-family: "Playfair Display";
-    background: #a30b9c;
-    background: -webkit-linear-gradient(to right, var(--cor-terciaria), var(--cor-terciaria));
-    background: linear-gradient(to right,var(--cor-terciaria), var(--cor-terciaria));
+    background-color: var(--cor-terciaria);
     background-repeat: repeat;
     overflow-y: auto;
+    -webkit-font-smoothing: antialiased;
 }
 
 .star0 {
@@ -195,7 +194,7 @@ main {
     position: relative;
     z-index: 10;
     width: 300px;
-    height: 300px;;
+    height: 300px;
 }
 
 .center {
@@ -257,7 +256,7 @@ main {
     flex-direction: column;
     align-items: center;
     height: auto;
-    padding: auto;
+    padding: 0;
     margin-top: 150px;
     position: relative;
     z-index: 10;
@@ -277,10 +276,12 @@ main {
     display: flex;
     align-items: center;
     flex-direction: column;
-    font-family: 'Montserrat', sans-serif
-}
+    font-family: 'Montserrat', sans-serif;
+    height: auto;
+}   
 
 #text-sobre p {
+    margin-top: 40px;
     font-size: 25px;
     color: white;
     text-align: center;
@@ -290,6 +291,8 @@ main {
     color: white;
     font-size: 35px;
     border-bottom: var(--cor-secundaria) solid 2px;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 .skills {
@@ -354,8 +357,9 @@ main {
     flex-direction: column;
     align-items: center;
     height: auto;
-    padding: auto;
+    padding: 0;
     margin-top: 150px;
+    margin-bottom: 150px;
 }
 
 .container-experiencia{
@@ -381,6 +385,8 @@ main {
     position: relative;
     max-width: 1200px;
     margin: 100px auto;
+    height: auto;
+    
 }
 
 .timeline::after {
@@ -425,6 +431,11 @@ main {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-top: 4px solid var(--cor-primaria);
     text-align: center;
+    height: 160px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column
 }
 
 .bolinha {
@@ -466,7 +477,7 @@ main {
     display: flex;
     justify-content: center;
     height: auto;
-    padding: auto;
+    padding: 0;
 }
 
 .container-projetos{
@@ -656,23 +667,24 @@ main {
 @media screen and (max-width: 768px) {
 
    header {
-        padding: 5px 0;
+        width: 90%;
+        margin: auto;
     }
 
     header nav {
         flex-direction: column; 
         justify-content: center;
-        padding: 20px;
+        padding: 15px;
     }
 
     header nav ul {
         margin-top: 15px;
-        gap: 15px;
+        gap: 10px;
     }
 
     header nav ul li a {
         font-size: 16px; 
-        padding: 10px 15px;
+        padding: 5px 10px;
     }
     
     #Home {
@@ -772,7 +784,7 @@ main {
     }
 
     #Rodape {
-        height: 400px;;
+        height: 400px;
     }
 
     #Rodape h2 {
