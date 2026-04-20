@@ -65,6 +65,8 @@ header {
     top: 0%;
     width: 100%;
     z-index: 1000; 
+    box-sizing: border-box;
+    transform: translateZ(0); /* Força renderização pela GPU para evitar tremores */
 }
 
 header nav {
