@@ -771,6 +771,9 @@ main {
 
     .container-projetos h1 {
         font-size: 30px;
+        text-align: center;
+        margin: auto;
+        width: 300px;;
     }
 
     .project-card {
