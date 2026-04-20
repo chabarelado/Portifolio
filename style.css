@@ -187,6 +187,26 @@ main {
     border-radius: 50%;
 }
 
+.button-download{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: var(--cor-secundaria);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.button-download:hover{
+    background-color: white;
+    color: var(--cor-secundaria);
+    transform: scale(1.10);
+}
+
 #Sobre {
     display: flex;
     justify-content: center;
