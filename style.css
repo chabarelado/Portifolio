@@ -1,6 +1,7 @@
-
-html {
-  scroll-behavior: smooth;
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 :root {
@@ -21,7 +22,6 @@ body {
     background: -webkit-linear-gradient(to right, var(--cor-terciaria), var(--cor-terciaria));
     background: linear-gradient(to right,var(--cor-terciaria), var(--cor-terciaria));
     background-repeat: repeat;
-    overflow-x: hidden;
     overflow-y: auto;
 }
 
@@ -68,7 +68,9 @@ header {
     z-index: 1000; 
     box-sizing: border-box;
     display: block;
-
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 header nav {
@@ -463,28 +465,31 @@ main {
 
 @media screen and (max-width: 768px) {
 
-    header {
+   header {
         padding: 10px 0;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        backface-visibility: hidden;
     }
 
     header nav {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: column; 
+        justify-content: space-around;
+        padding: 20px;
     }
 
     header nav ul {
+        margin-top: 15px;
         gap: 15px;
-        justify-content: center;
-        flex-wrap: wrap;
     }
 
     header nav ul li a {
-        font-size: 18px;
+        font-size: 14px; 
+        padding: 20px;
     }
-
     
     #Home {
-       margin-top: 0;
+       margin-top: 100;
     }
 
     .container-home {
@@ -533,9 +538,8 @@ main {
     }
 
     .container-timeline {
-        width: 70%;
+        width: 65%;
         padding-left: 70px;
-        padding-right: 25px;
         text-align: left;
     }
 
