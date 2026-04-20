@@ -542,7 +542,7 @@ main {
     }
 
     .container-timeline {
-        width: 90%;
+        width: 85%;
         padding-left: 70px;
         text-align: left;
     }
@@ -562,7 +562,7 @@ main {
 
 
     .container-projetos {
-        width: 95%;
+        width: 100%;
         height: auto;
         min-height: 400px;
     }
